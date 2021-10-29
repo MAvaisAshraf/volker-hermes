@@ -3242,18 +3242,18 @@ var _locomotiveScroll = _interopRequireDefault(require("locomotive-scroll"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var backtopEl = document.querySelector('.backtop');
-var headerEl = document.querySelector('#header'); // Preload  images and fonts
+var backtopEl = document.querySelector(".backtop");
+var headerEl = document.querySelector("#header"); // Preload  images and fonts
 
-Promise.all([(0, _utils.preloadImages)('.tiles__line-img'), (0, _utils.preloadFonts)('rmd7deq')]).then(function () {
+Promise.all([(0, _utils.preloadImages)(".tiles__line-img"), (0, _utils.preloadFonts)("rmd7deq")]).then(function () {
   // Remove loader (loading class)
-  document.body.classList.remove('loading'); // Initialize the Locomotive scroll
+  document.body.classList.remove("loading"); // Initialize the Locomotive scroll
 
   var scroll = new _locomotiveScroll.default({
-    el: document.querySelector('[data-scroll-container]'),
+    el: document.querySelector("[data-scroll-container]"),
     smooth: true
   });
-  backtopEl.addEventListener('click', function () {
+  backtopEl.addEventListener("click", function () {
     return scroll.scrollTo(headerEl);
   });
 });
@@ -3285,7 +3285,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57732" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52590" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
