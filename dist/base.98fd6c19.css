@@ -114,12 +114,21 @@ main {
 
 .content {
   padding: 3rem;
-  min-height: 90vh;
+  min-height: 60vh;
   display: flex;
   position: relative;
   flex-direction: column;
   align-content: center;
   justify-content: space-between;
+}
+
+.form {
+  padding: 3rem;
+  min-height: 30vh;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-content: center;
 }
 
 .back-to-top {
@@ -163,6 +172,15 @@ main {
   font-size: 9vw;
   line-height: 0.8;
   margin: 0 0 3rem 0;
+  font-weight: 400;
+  max-width: 800px;
+  will-change: transform;
+}
+
+.form__title {
+  font-size: 5vw;
+  line-height: 0.8;
+  margin: 0 0 2rem 0;
   font-weight: 400;
   max-width: 800px;
   will-change: transform;
@@ -487,7 +505,8 @@ html.has-scroll-dragging {
 
 .email-input {
   background-color: #000000;
-  padding: 4px;
+  width: 340px;
+  padding: 10px;
   color: #ffffff;
   border-style: solid;
   border-width: 1px;
@@ -501,7 +520,7 @@ html.has-scroll-dragging {
   border-color: #ffffff;
   border-style: solid;
   border-width: 1px;
-  padding: 4px;
+  padding: 10px;
   width: 100px;
   font-family: neuzeit-grotesk, sans-serif;
 }
