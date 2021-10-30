@@ -14,8 +14,7 @@ Promise.all([preloadImages(".tiles__line-img"), preloadFonts("rmd7deq")]).then(
     const scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
-      smartphone: { smooth: true },
-      tablet: { smooth: true },
+      smoothMobile: true
     });
 
     backtopEl.addEventListener("click", () => scroll.scrollTo(headerEl));
