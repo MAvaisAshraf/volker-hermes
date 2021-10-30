@@ -121,8 +121,8 @@ main {
 }
 
 .content {
-  padding: 3rem;
-  min-height: 60vh;
+  padding: 2em 2em 0 2em;
+  min-height: 45vh;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -138,6 +138,11 @@ main {
   position: relative;
   flex-direction: column;
   align-content: center;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .back-to-top {
@@ -177,15 +182,6 @@ main {
   margin-right: 0.25rem;
 }
 
-.content__title {
-  font-size: 9vw;
-  line-height: 0.8;
-  margin: 0 0 3rem 0;
-  font-weight: 400;
-  max-width: 800px;
-  will-change: transform;
-}
-
 .form__title {
   font-size: 5vw;
   line-height: 0.8;
@@ -199,6 +195,7 @@ main {
 .content__text {
   font-size: 2.25rem;
   font-size: clamp(1rem, 4vw, 2.25rem);
+  line-height: 1.5;
 }
 
 .sub-head {
@@ -239,14 +236,6 @@ main {
   overflow: hidden;
 }
 
-.tiles--columns-rotated {
-  --tiles-height: 180vmax;
-}
-
-.tiles--columns {
-  --tiles-height: 140vh;
-}
-
 .tiles--oneline {
   --tiles-height: 70vh;
   min-height: 600px;
@@ -279,30 +268,6 @@ main {
   transform: translate3d(-50%, -50%, 0);
 }
 
-.tiles--rotated .tiles__wrap {
-  --tileswrap-height: calc(var(--tiles-height) * 1.8);
-  transform: translate3d(-50%, -50%, 0) rotate(22.5deg);
-}
-
-.tiles--columns-rotated .tiles__wrap {
-  width: 150%;
-  display: flex;
-  transform: translate3d(-50%, -50%, 0) rotate(-22.5deg);
-  left: 50%;
-  top: 50%;
-  align-items: center;
-  justify-content: center;
-}
-
-.tiles--columns .tiles__wrap {
-  width: 100%;
-  display: flex;
-  --tileswrap-height: calc(var(--tiles-height) * 1.4);
-  transform: translate3d(0, -50%, 0);
-  left: 0;
-  top: 50%;
-}
-
 .tiles--perspective .tiles__wrap {
   width: 200%;
   transform: translate3d(-50%, -50%, 0) translateX(-25%) translateZ(-1200px)
@@ -315,23 +280,6 @@ main {
 
 .tiles__line {
   display: flex;
-}
-
-.tiles--columns .tiles__line {
-  width: 25%;
-  padding: 0 1rem;
-  display: block;
-}
-
-.tiles--columns-rotated .tiles__line {
-  width: 320px;
-  flex: none;
-  padding: 0 1.5vw;
-  display: block;
-}
-
-.tiles--columns-rotated .tiles__line:nth-child(even) {
-  margin-top: -160px;
 }
 
 .tiles--oneline .tiles__line {
@@ -357,7 +305,7 @@ main {
   outline: 1px solid transparent;
   --tile-margin: 2vw;
   width: calc(16.6666% - var(--tile-margin) * 2);
-  height: calc(16.666vw * 1.5);
+  height: 380px;
 }
 
 .tiles--oneline .tiles__line-img {
@@ -380,18 +328,6 @@ main {
   height: calc(var(--tileswrap-height) / 5 - (4 * var(--tile-margin) / 2));
 }
 
-.tiles--columns-rotated .tiles__line-img {
-  --tile-margin: 3vw 0;
-  width: 100%;
-  height: 400px;
-}
-
-.tiles--columns .tiles__line-img {
-  --tile-margin: 2rem 0;
-  width: 100%;
-  height: calc(25vw * 1.3);
-}
-
 .tiles--fixed .tiles__line-img {
   --tile-margin: 10px;
   -webkit-filter: brightness(0.8);
@@ -410,7 +346,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10vw;
+  font-size: 11vw;
   padding: 3rem;
   margin: 0;
   line-height: 0.8;
@@ -526,19 +462,22 @@ html.has-scroll-dragging {
 }
 
 .submit-button {
+  display: block;
   border-radius: 0px;
   background-color: #ffffff;
   border-color: #ffffff;
   border-style: solid;
+  border-radius: 5px;
   border-width: 0px;
-  padding: 11px;
-  margin-left: -5px;
-  width: 100px;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  width: 85px;
   font-family: neuzeit-grotesk, sans-serif;
   font-size: 18px;
+  cursor: pointer;
 }
 
-@media screen and (min-width: 53em) {
+@media screen and (min-width: 800px) {
   .frame {
     display: grid;
     align-content: space-between;
@@ -561,15 +500,6 @@ html.has-scroll-dragging {
     padding: 0;
     justify-self: end;
   }
-  .tiles--columns-rotated .tiles__line {
-    width: 33vmax;
-  }
-  .tiles--columns-rotated .tiles__line:nth-child(even) {
-    margin-top: -20vmax;
-  }
-  .tiles--columns-rotated .tiles__line-img {
-    height: 40vmax;
-  }
   .content--numbered::after {
     counter-increment: contentSection;
     content: counter(contentSection, decimal-leading-zero);
@@ -587,9 +517,9 @@ html.has-scroll-dragging {
     border-radius: 50%;
   }
   .content__text {
-    max-width: 800px;
+    max-width: 1000px;
     width: 50vw;
-    min-width: calc(300px - 6rem);
+    min-width: 200px;
   }
   .content__text--wide {
     max-width: 1000px;
