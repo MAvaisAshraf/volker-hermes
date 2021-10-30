@@ -3251,7 +3251,13 @@ Promise.all([(0, _utils.preloadImages)(".tiles__line-img"), (0, _utils.preloadFo
 
   var scroll = new _locomotiveScroll.default({
     el: document.querySelector("[data-scroll-container]"),
-    smooth: true
+    smooth: true,
+    smartphone: {
+      smooth: true
+    },
+    tablet: {
+      smooth: true
+    }
   });
   backtopEl.addEventListener("click", function () {
     return scroll.scrollTo(headerEl);
@@ -3285,7 +3291,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51830" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50793" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
