@@ -4,18 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Volker Hermes</title>
-    <meta
-      name="description"
-      content="Scroll animations for image grids powered by Locomotive Scroll"
-    />
-    <meta
-      name="keywords"
-      content="locomotive scroll, scroll animation, website, javascript, demo"
-    />
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="https://use.typekit.net/rmd7deq.css" />
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex"></script>
     <script>
       document.documentElement.className = "js";
       var supportsCssVars = function () {
@@ -303,13 +297,14 @@
       </section>
 
       <section class="form">
-        <p class="form__title">Get notified.</p>
+        <p class="form__title">{{formSubmit ? "You're on the list." : "Get notified."}}</p>
         <form
           name="contact"
-          action="thank-you.html"
           method="POST"
           data-netlify="true"
           class="form-content"
+          v-if="!formSubmit"
+          @submit="handleSubmit"
         >
           <label
             ><input
@@ -332,6 +327,20 @@
         </div>
       </section>
     </main>
+    <script>
+    const vueApp = new Vue({
+      el: '#main',
+      data: {
+       formSubmit: false
+      },
+      methods: {
+        handleSubmit(e) {
+          e.preventDefault();
+          this.formSubmit = true
+        }
+      }
+    })
+    </script>
     <script src="js/index.js"></script>
   </body>
 </html>
