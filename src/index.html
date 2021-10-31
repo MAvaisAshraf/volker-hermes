@@ -286,7 +286,7 @@
           method="POST"
           target="frame"
           class="form-content"
-          v-if="!formSubmit"
+          v-show="!formSubmit"
           @submit="handleSubmit"
         >
           <label
@@ -318,7 +318,7 @@
        formSubmit: false
       },
       methods: {
-        handleSubmit(e) {
+        handleSubmit() {
           this.formSubmit = true
         }
       }
