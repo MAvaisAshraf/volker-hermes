@@ -4,48 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Volker Hermes</title>
-    <meta
-      name="description"
-      content="Scroll animations for image grids powered by Locomotive Scroll"
-    />
-    <meta
-      name="keywords"
-      content="locomotive scroll, scroll animation, website, javascript, demo"
-    />
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="https://use.typekit.net/rmd7deq.css" />
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex"></script>
     <script>
       document.documentElement.className = "js";
-      var supportsCssVars = function () {
-        var e,
-          t = document.createElement("style");
-        return (
-          (t.innerHTML = "root: { --tmp-var: bold; }"),
-          document.head.appendChild(t),
-          (e = !!(
-            window.CSS &&
-            window.CSS.supports &&
-            window.CSS.supports("font-weight", "var(--tmp-var)")
-          )),
-          t.parentNode.removeChild(t),
-          e
-        );
-      };
-      supportsCssVars() ||
-        alert(
-          "Please view this demo in a modern browser that supports CSS Variables."
-        );
     </script>
   </head>
-  <body class="demo-3 loading">
+  <body class="loading">
     <main id="main" data-scroll-container>
       <section id="header" class="content content--auto">
         <div class="frame">
-          <div class="frame__title-wrap">
-            <h1 class="frame__title"></h1>
-          </div>
           <div class="frame__demos">
             <a href="https://www.instagram.com/volker.hermes/">Instagram</a>
             <a href="https://twitter.com/volker_hermes">Twitter</a>
@@ -306,12 +278,13 @@
       </section>
 
       <section class="form">
-        <p class="form__title">Get notified.</p>
+        <p class="form__title">{{formSubmit ? "You're on the list." : "Get notified."}}</p>
         <form
           name="contact"
-          action="thank-you.html"
-          method="POST"
           data-netlify="true"
+          class="form-content"
+          v-if="!formSubmit"
+          @submit="handleSubmit"
         >
           <label
             ><input
@@ -330,10 +303,24 @@
           <a href="https://twitter.com/tkn_art" class="frame__social"
             >@tkn_art</a
           >
-          <div class="frame__demos"></div>
         </div>
       </section>
     </main>
+
+    <script>
+    const vueApp = new Vue({
+      el: '#main',
+      data: {
+       formSubmit: false
+      },
+      methods: {
+        handleSubmit(e) {
+          e.preventDefault();
+          this.formSubmit = true
+        }
+      }
+    })
+    </script>
     <script src="js/index.js"></script>
   </body>
 </html>
