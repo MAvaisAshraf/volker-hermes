@@ -287,17 +287,17 @@
           target="frame"
           action="thank-you.html"
           class="form-content"
-          v-show="!formSubmit"
-          @submit="handleSubmit"
         >
-          <label
-            ><input
-              class="email-input"
-              type="email"
-              name="email"
-              placeholder="email"
-          /></label>
-          <button class="submit-button" type="submit">Send</button>
+          <div class="form-content" v-show="!formSubmit" @submit="handleSubmit">
+            <label
+              ><input
+                class="email-input"
+                type="email"
+                name="email"
+                placeholder="email"
+            /></label>
+            <button class="submit-button" type="submit">Send</button>
+          </div>
         </form>
       </section>
       <section class="back-to-top">
