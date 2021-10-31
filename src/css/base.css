@@ -10,13 +10,8 @@
 
 body {
   margin: 0;
-  --color-text: #fff;
-  --color-bg: #070707;
-  --color-link: #aaa;
-  --color-link-hover: #fff;
-  --color-alt: #7f6a57;
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  color: #fff;
+  background-color: #070707;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   counter-reset: contentSection;
@@ -36,7 +31,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--color-bg);
+  background: #070707;
 }
 
 .js .loading::after {
@@ -47,7 +42,7 @@ body {
   margin: -30px 0 0 -30px;
   border-radius: 50%;
   opacity: 0.4;
-  background: var(--color-link);
+  background: #aaa;
   animation: loaderAnim 0.7s linear infinite alternate forwards;
 }
 
@@ -60,13 +55,13 @@ body {
 
 a {
   text-decoration: underline;
-  color: var(--color-link);
+  color: #aaa;
   outline: none;
 }
 
 a:hover,
 a:focus {
-  color: var(--color-link-hover);
+  color: #fff;
   outline: none;
   text-decoration: none;
 }
@@ -93,23 +88,12 @@ main {
   font-weight: normal;
 }
 
-.frame__links {
-  display: inline;
-}
-
-.frame__links a:not(:last-child),
 .frame__demos a:not(:last-child) {
   margin-right: 1rem;
 }
 
 .frame__demos {
   margin: 1rem 0;
-}
-
-.frame__demo--current,
-.frame__demo--current:hover {
-  text-decoration: none;
-  color: var(--color-alt);
 }
 
 .testimonial {
@@ -199,58 +183,29 @@ main {
   margin: auto;
 }
 
-.content__breakout {
-  margin: 0 -3rem;
-  white-space: nowrap;
-  text-transform: uppercase;
-  font-family: span, serif;
-  font-weight: 200;
-  font-style: italic;
-  color: #211f1b;
-}
-
-.content__breakout--big {
-  font-size: 13vw;
-  font-weight: 200;
-}
-
-.content__breakout--medium {
-  font-size: 5vw;
-}
-
 .tiles {
-  --tiles-height: 52vw;
-  height: var(--tiles-height);
+  height: 325px;
   position: relative;
   overflow: hidden;
 }
 
 .tiles--oneline {
-  --tiles-height: 70vh;
   min-height: 600px;
   margin: 10vh 0;
 }
 
-.tiles--small {
-  --tiles-height: 100px;
-  margin: 10vh 0 0;
-}
-
 .tiles--fixed {
-  --tiles-height: 65vw;
   margin-top: 25vh;
 }
 
 .tiles--perspective {
   overflow: visible;
   perspective: 1200px;
-  --tiles-height: 300px;
 }
 
 .tiles__wrap {
   width: 150%;
-  --tileswrap-height: var(--tiles-height);
-  height: var(--tileswrap-height);
+  height: 70vh;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -275,16 +230,9 @@ main {
   height: 100%;
 }
 
-.tiles--small .tiles__line {
-  height: 100%;
-}
-
 .tiles__line-img {
-  --tile-margin: 2vw;
   flex: none;
-  width: calc(16.6666% - var(--tile-margin) * 2);
-  height: calc(var(--tileswrap-height) / 3 - (3 * var(--tile-margin) / 2));
-  margin: var(--tile-margin);
+  margin: 2vw;
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -292,29 +240,14 @@ main {
 .tiles--perspective .tiles__line-img {
   backface-visibility: hidden;
   outline: 1px solid transparent;
-  --tile-margin: 2vw;
-  width: calc(16.6666% - var(--tile-margin) * 2);
+  width: 15%;
   height: 380px;
 }
 
 .tiles--oneline .tiles__line-img {
-  --tile-margin: 1vw;
-  margin: 0 var(--tile-margin);
+  margin: 0 1vw;
   width: 23%;
   height: 100%;
-}
-
-.tiles--rotated .tiles__line-img {
-  --tile-margin: 1vw;
-  width: calc(16.6666% - var(--tile-margin) * 2);
-  height: calc(var(--tileswrap-height) / 5 - (4 * var(--tile-margin) / 2));
-}
-
-.tiles--fixed .tiles__line-img {
-  --tile-margin: 10px;
-  -webkit-filter: brightness(0.8);
-  width: calc(16.6666% - var(--tile-margin) * 2);
-  height: calc(var(--tileswrap-height) / 3 - (3 * var(--tile-margin) / 2));
 }
 
 .tiles--darker .tiles__line-img {
@@ -328,7 +261,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 11vw;
+  font-size: 16vw;
   padding: 3rem;
   margin: 0;
   line-height: 0.8;
@@ -437,13 +370,11 @@ html.has-scroll-dragging {
     grid-area: demos;
     justify-self: end;
   }
-  .frame__links {
-    grid-area: links;
-    padding: 0;
-    justify-self: end;
-  }
   .content {
     padding: 3em 2em 0 3.5em;
+  }
+  .tiles__title--intro {
+    font-size: 11vw;
   }
   .content__text {
     max-width: 1000px;
@@ -453,8 +384,5 @@ html.has-scroll-dragging {
   .content__text--wide {
     max-width: 1000px;
     width: 65vw;
-  }
-  .tiles--small {
-    --tiles-height: 240px;
   }
 }

@@ -10,15 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vuex"></script>
-    <script>document.documentElement.className = "js";
-
-var supportsCssVars = function supportsCssVars() {
-  var e,
-      t = document.createElement("style");
-  return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e;
-};
-
-supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+    <script>document.documentElement.className = "js";</script>
   <script src="/base.98fd6c19.js"></script></head>
   <body class="loading">
     <main id="main" data-scroll-container="">
@@ -136,7 +128,7 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 
       <section class="form">
         <p class="form__title">{{formSubmit ? "You're on the list." : "Get notified."}}</p>
-        <form name="contact" method="POST" data-netlify="true" class="form-content" v-if="!formSubmit" @submit="handleSubmit">
+        <form name="contact" data-netlify="true" class="form-content" v-if="!formSubmit" @submit="handleSubmit">
           <label><input class="email-input" type="email" name="email" placeholder="email"></label>
           <button class="submit-button" type="submit">Send</button>
         </form>
