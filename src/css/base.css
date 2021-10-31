@@ -126,7 +126,6 @@ main {
 
 .form-content {
   display: flex;
-  flex-direction: column;
 }
 
 .back-to-top {
@@ -346,9 +345,8 @@ html.has-scroll-dragging {
   background-color: #ffffff;
   border-color: #ffffff;
   border-style: solid;
-  border-radius: 5px;
   border-width: 0px;
-  margin: 10px 0 0 0;
+  margin: 0;
   padding: 10px;
   width: 85px;
   font-family: neuzeit-grotesk, sans-serif;
