@@ -278,13 +278,16 @@
       </section>
 
       <section class="form">
-        <p class="form__title">{{formSubmit ? "You're on the list." : "Get notified."}}</p>
+        <p class="form__title">
+          {{formSubmit ? "You're on the list." : "Get notified."}}
+        </p>
         <form
           name="contact"
           data-netlify="true"
           class="form-content"
           v-if="!formSubmit"
           @submit="handleSubmit"
+          netlify
         >
           <label
             ><input
@@ -308,18 +311,18 @@
     </main>
 
     <script>
-    const vueApp = new Vue({
-      el: '#main',
-      data: {
-       formSubmit: false
-      },
-      methods: {
-        handleSubmit(e) {
-          e.preventDefault();
-          this.formSubmit = true
-        }
-      }
-    })
+      const vueApp = new Vue({
+        el: "#main",
+        data: {
+          formSubmit: false,
+        },
+        methods: {
+          handleSubmit(e) {
+            e.preventDefault();
+            this.formSubmit = true;
+          },
+        },
+      });
     </script>
     <script src="js/index.js"></script>
   </body>
