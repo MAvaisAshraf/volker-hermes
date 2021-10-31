@@ -33,9 +33,36 @@
             data-scroll-direction="horizontal"
           >
             <div
-              v-for="link in links"
               class="tiles__line-img"
-              :style="{backgroundImage: 'url(' + link + ')'}"
+              style="background-image: url(img/perspective/hp_0.jpg)"
+            ></div>
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/perspective/hp_1.jpg)"
+            ></div>
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/perspective/hp_2.jpg)"
+            ></div>
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/perspective/hp_3.jpg)"
+            ></div>
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/perspective/hp_4.jpg)"
+            ></div>
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/perspective/hp_5.jpg)"
+            ></div>
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/perspective/hp_6.jpg)"
+            ></div>
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/perspective/hp_7.jpg)"
             ></div>
           </div>
           <div
@@ -284,8 +311,7 @@
     const vueApp = new Vue({
       el: '#main',
       data: {
-       formSubmit: false,
-       links: ["img/perspective/hp_1.jpg", "img/perspective/hp_1.jpg", "img/perspective/hp_1.jpg", "img/perspective/hp_1.jpg"]
+       formSubmit: false
       },
       methods: {
         handleSubmit(e) {
