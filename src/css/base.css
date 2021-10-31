@@ -18,6 +18,10 @@ body {
   font-family: neuzeit-grotesk, sans-serif;
 }
 
+iframe {
+  display: none;
+}
+
 /* Page Loader */
 .js .loading::before,
 .js .loading::after {

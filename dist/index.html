@@ -129,7 +129,7 @@
 
       <section class="form">
         <p class="form__title">{{formSubmit ? "You're on the list." : "Get notified."}}</p>
-        <form name="contact" data-netlify="true" class="form-content" v-if="!formSubmit" @submit="handleSubmit">
+        <form name="contact" data-netlify="true" method="POST" target="frame" class="form-content" v-if="!formSubmit" @submit="handleSubmit">
           <label><input class="email-input" type="email" name="email" placeholder="email"></label>
           <button class="submit-button" type="submit">Send</button>
         </form>
@@ -141,6 +141,7 @@
           <a href="https://twitter.com/tkn_art" class="frame__social">@tkn_art</a>
         </div>
       </section>
+      <iframe name="frame"></iframe>
     </main>
 
     <script>var vueApp = new Vue({
