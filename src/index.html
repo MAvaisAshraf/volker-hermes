@@ -285,8 +285,10 @@
           data-netlify="true"
           method="POST"
           target="frame"
-          action="thank-you.html"
+          action="about:blank"
           class="form-content"
+          v-show="!formSubmit"
+          @submit="handleSubmit"
         >
           <label
             ><input
