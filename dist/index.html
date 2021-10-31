@@ -25,14 +25,7 @@
       <section class="tiles tiles--perspective tiles--darker">
         <div class="tiles__wrap">
           <div class="tiles__line" data-scroll="" data-scroll-speed="2" data-scroll-direction="horizontal">
-            <div class="tiles__line-img" style="background-image: url(/hp_0.99a5e9fc.jpg)"></div>
-            <div class="tiles__line-img" style="background-image: url(/hp_1.44e0f274.jpg)"></div>
-            <div class="tiles__line-img" style="background-image: url(/hp_2.f524b2f8.jpg)"></div>
-            <div class="tiles__line-img" style="background-image: url(/hp_3.2627ca52.jpg)"></div>
-            <div class="tiles__line-img" style="background-image: url(/hp_4.244361ce.jpg)"></div>
-            <div class="tiles__line-img" style="background-image: url(/hp_5.01b96869.jpg)"></div>
-            <div class="tiles__line-img" style="background-image: url(/hp_6.6d27be07.jpg)"></div>
-            <div class="tiles__line-img" style="background-image: url(/hp_7.758a41e6.jpg)"></div>
+            <div v-for="link in links" class="tiles__line-img" :style="{backgroundImage: 'url(' + link + ')'}"></div>
           </div>
           <div class="tiles__line" data-scroll="" data-scroll-speed="0" data-scroll-direction="horizontal">
             <div class="tiles__line-img" style="background-image: url(/hp_8.f4a17a8e.jpg)"></div>
@@ -141,11 +134,12 @@
         </div>
       </section>
     </main>
-    
+
     <script>var vueApp = new Vue({
   el: '#main',
   data: {
-    formSubmit: false
+    formSubmit: false,
+    links: ["img/perspective/hp_1.jpg", "img/perspective/hp_1.jpg", "img/perspective/hp_1.jpg", "img/perspective/hp_1.jpg"]
   },
   methods: {
     handleSubmit: function handleSubmit(e) {
