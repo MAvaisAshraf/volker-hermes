@@ -144,19 +144,20 @@
             ></div>
           </div>
         </div>
+
         <h2
-          class="tiles__title tiles__title--intro"
+          class="tiles__title intro tiles__title--intro"
           data-scroll
           data-scroll-speed="4"
         >
-          Volker <br />Hermes
+          Volker <br />hermes
+          <br/>
+          <span class="sub-title">Minting 2021.</span>
         </h2>
+
+        </div>
       </section>
-      <section class="content">
-        <p class="content__text sub-head" data-scroll data-scroll-speed="2">
-          Minting 2021.
-        </p>
-      </section>
+      <div class="content"></div>
       <section class="tiles tiles--oneline" id="grid2">
         <div class="tiles__wrap">
           <div
@@ -284,19 +285,25 @@
         <form
           name="contact"
           data-netlify="true"
+          method="POST"
+          target="frame"
+          action="thank-you.html"
           class="form-content"
+
           v-if="!formSubmit"
           @submit="handleSubmit"
           netlify
         >
-          <label
-            ><input
-              class="email-input"
-              type="email"
-              name="email"
-              placeholder="email"
-          /></label>
-          <button class="submit-button" type="submit">Send</button>
+          <div class="form-content" v-show="!formSubmit">
+            <label
+              ><input
+                class="email-input"
+                type="email"
+                name="email"
+                placeholder="email"
+            /></label>
+            <button @click="handleSubmit" class="submit-button" type="submit">Send</button>
+          </div>
         </form>
       </section>
       <section class="back-to-top">
@@ -308,21 +315,22 @@
           >
         </div>
       </section>
+      <iframe name="frame"></iframe>
     </main>
 
     <script>
-      const vueApp = new Vue({
-        el: "#main",
-        data: {
-          formSubmit: false,
-        },
-        methods: {
-          handleSubmit(e) {
-            e.preventDefault();
-            this.formSubmit = true;
-          },
-        },
-      });
+    const vueApp = new Vue({
+      el: '#main',
+      data: {
+       formSubmit: false
+      },
+      methods: {
+        handleSubmit() {
+          this.formSubmit = true
+        }
+      }
+    })
+
     </script>
     <script src="js/index.js"></script>
   </body>

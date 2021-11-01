@@ -55,15 +55,16 @@
             <div class="tiles__line-img" style="background-image: url(/hp_23.b2b0d8fe.jpg)"></div>
           </div>
         </div>
-        <h2 class="tiles__title tiles__title--intro" data-scroll="" data-scroll-speed="4">
-          Volker <br>Hermes
+
+        <h2 class="tiles__title intro tiles__title--intro" data-scroll="" data-scroll-speed="4">
+          Volker <br>hermes
+          <br>
+          <span class="sub-title">Minting 2021.</span>
         </h2>
+
+        
       </section>
-      <section class="content">
-        <p class="content__text sub-head" data-scroll="" data-scroll-speed="2">
-          Minting 2021.
-        </p>
-      </section>
+      <div class="content"></div>
       <section class="tiles tiles--oneline" id="grid2">
         <div class="tiles__wrap">
           <div class="tiles__line" data-scroll="" data-scroll-speed="2" data-scroll-target="#grid2" data-scroll-direction="horizontal">
@@ -128,7 +129,7 @@
 
       <section class="form">
         <p class="form__title">{{formSubmit ? "You're on the list." : "Get notified."}}</p>
-        <form name="contact" data-netlify="true" class="form-content" v-if="!formSubmit" @submit="handleSubmit">
+        <form name="contact" data-netlify="true" method="POST" target="frame" class="form-content" v-show="!formSubmit" @submit="handleSubmit">
           <label><input class="email-input" type="email" name="email" placeholder="email"></label>
           <button class="submit-button" type="submit">Send</button>
         </form>
@@ -140,6 +141,7 @@
           <a href="https://twitter.com/tkn_art" class="frame__social">@tkn_art</a>
         </div>
       </section>
+      <iframe name="frame"></iframe>
     </main>
 
     <script>var vueApp = new Vue({
@@ -148,8 +150,7 @@
     formSubmit: false
   },
   methods: {
-    handleSubmit: function handleSubmit(e) {
-      e.preventDefault();
+    handleSubmit: function handleSubmit() {
       this.formSubmit = true;
     }
   }
