@@ -279,7 +279,9 @@
       </section>
 
       <section class="form">
-        <p class="form__title">{{formSubmit ? "You're on the list." : "Get notified."}}</p>
+        <p class="form__title">
+          {{formSubmit ? "You're on the list." : "Get notified."}}
+        </p>
         <form
           name="contact"
           data-netlify="true"
@@ -287,6 +289,10 @@
           target="frame"
           action="thank-you.html"
           class="form-content"
+
+          v-if="!formSubmit"
+          @submit="handleSubmit"
+          netlify
         >
           <div class="form-content" v-show="!formSubmit">
             <label
@@ -324,6 +330,7 @@
         }
       }
     })
+
     </script>
     <script src="js/index.js"></script>
   </body>
