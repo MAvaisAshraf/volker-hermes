@@ -243,7 +243,50 @@
           Polyhedric Nature
         </h2>
       </section>
-
+      <section class="tiles tiles--oneline" id="grid4">
+        <div class="tiles__wrap">
+          <div
+            class="tiles__line"
+            data-scroll
+            data-scroll-speed="3"
+            data-scroll-target="#grid4"
+            data-scroll-direction="horizontal"
+          >
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/anipoy/animalis_polyedae_1.jpg)"
+            ></div>
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/anipoy/animalis_polyedae_2.jpg)"
+            ></div>
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/anipoy/animalis_polyedae_3.jpg)"
+            ></div>
+            <div
+              class="tiles__line-img"
+              style="background-image: url(img/anipoy/animalis_polyedae_4.jpg)"
+            ></div>
+             <div
+              class="tiles__line-img"
+              style="background-image: url(img/anipoy/animalis_polyedae_5.jpg)"
+            ></div>
+          </div>
+        </div>
+        <h2
+          class="
+            tiles__title
+            tiles__title--right
+            tiles__title--full
+            tiles__title--alt
+          "
+          data-scroll
+          data-scroll-speed="1"
+        >
+          Animalis Polyedae
+        </h2>
+      </section>
       <section class="content">
         <p
           class="content__text content__text--wide"
@@ -262,11 +305,11 @@
         </p>
       </section>
 
-      <section class="content">
+      <section class="content testimonial">
         <p
           class="content__text content__text--centered testimonial"
           data-scroll
-          data-scroll-speed="4"
+          data-scroll-speed="3"
         >
           “Self-representation has always been a fertile creative territory for
           artists, portraiture being a visual medium that has most directly
@@ -280,56 +323,27 @@
 
       <section class="form">
         <p class="form__title">
-          {{formSubmit ? "You're on the list." : "Get notified."}}
+          Want to be<br/> notified? 
         </p>
-        <form
-          name="contact"
-          data-netlify="true"
-          method="POST"
-          target="frame"
-          class="form-content"
-          v-if="!formSubmit"
-          @submit="handleSubmit"
-          netlify
-        >
-          <div class="form-content" v-show="!formSubmit">
-            <label
-              ><input
-                class="email-input"
-                type="email"
-                name="email"
-                placeholder="email"
-            /></label>
-            <button @click="handleSubmit" class="submit-button" type="submit">Send</button>
-          </div>
-        </form>
+        <button data-tf-popup="VI2JIPVs" data-tf-hide-headers data-tf-size="70" style="all:unset;font-family:Helvetica,Arial,sans-serif;display:inline-block;max-width:250px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background-color:#FFFFFF;color:#000000;font-size:20px;border-radius:0px;padding:0 33px;font-weight:bold;height:50px;cursor:pointer;line-height:50px;text-align:center;margin:0;text-decoration:none;">Get on the list.</button><script src="//embed.typeform.com/next/embed.js"></script>
       </section>
       <section class="back-to-top">
         <a class="backtop" data-scroll data-scroll-speed="4">Begin again.</a>
         <div class="frame frame--footer">
           Inquiries:
           <a href="https://twitter.com/tkn_art" class="frame__social"
-            >@tkn_art</a
-          >
+            >@tkn_art</a><br/>
+        </div>
+        <div class="frame frame--footer">
+          Follow:
+          <a href="https://twitter.com/volker_hermes" class="frame__social"
+            >@volker_hermes</a>
         </div>
       </section>
-      <iframe name="frame"></iframe>
+   
     </main>
 
-    <script>
-    const vueApp = new Vue({
-      el: '#main',
-      data: {
-       formSubmit: false
-      },
-      methods: {
-        handleSubmit() {
-          this.formSubmit = true
-        }
-      }
-    })
-
-    </script>
+    
     <script src="js/index.js"></script>
   </body>
 </html>

@@ -18,9 +18,9 @@ body {
   font-family: neuzeit-grotesk, sans-serif;
 }
 
-iframe {
+/* iframe {
   display: none;
-}
+} */
 
 /* Page Loader */
 .js .loading::before,
@@ -110,7 +110,7 @@ main {
 
 .content {
   padding: 1em 2em 0 3.5em;
-  min-height: 45vh;
+  min-height: 85vh;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -120,11 +120,11 @@ main {
 
 .form {
   padding: 3rem;
-  margin-top: 20vh;
-  min-height: 40vh;
+  margin-top: 60vh;
+  min-height: 60vh;
   display: flex;
+  margin: 100px auto;
   position: relative;
-  flex-direction: column;
   align-content: center;
 }
 
@@ -381,7 +381,7 @@ html.has-scroll-dragging {
     font-size: 3vw;
   }
   .content {
-    padding: 3em 2em 0 3.5em;
+    padding: 4em 2em 0 3.5em;
   }
   .tiles__title--intro {
     font-size: 11vw;
@@ -398,8 +398,24 @@ html.has-scroll-dragging {
   .form__title {
     font-size: 5vw;
   }
+
+  .form {
+    font-size: 5vw;
+    flex-direction: column;
+    align-items: center;
+    align: center;
+    text-align: center;
+  }
   .email-input {
     width: 380px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .form {
+    font-size: 5vw;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
